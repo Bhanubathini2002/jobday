@@ -1,0 +1,177 @@
+%% Bhanu Prakash Bathini — Professional Resume
+%% Compiler: XeLaTeX or pdfLaTeX
+%% Required packages: geometry, titlesec, enumitem, hyperref, fontawesome5, multicol, xcolor, parskip
+
+\documentclass[11pt,letterpaper]{article}
+
+% ─── PACKAGES ────────────────────────────────────────────────────────────────
+\usepackage[
+  top=0.35in, bottom=0.35in,
+  left=0.45in, right=0.45in
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ─── COLORS ──────────────────────────────────────────────────────────────────
+\definecolor{HEADINGBLUE}{RGB}{0, 0, 0} 
+\definecolor{RULECOLOR}{RGB}{0, 0, 0} 
+\definecolor{DARKGRAY}{RGB}{0, 0, 0}
+\definecolor{LINKBLUE}{RGB}{0, 0, 0}  
+
+% ─── HYPERREF ────────────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+% ─── FONTS ───────────────────────────────────────────────────────────────────
+\renewcommand{\familydefault}{\sfdefault}
+
+% ─── NO PAGE NUMBER ──────────────────────────────────────────────────────────
+\pagestyle{empty}
+
+% ─── SECTION FORMATTING ──────────────────────────────────────────────────────
+\titleformat{\section}[block]
+  {\color{HEADINGBLUE}\large\bfseries} % formatting
+  {}{0pt}%
+  {\titleline{\hrulefill\ \MakeUppercase{#1}\ \hrulefill}}
+
+\titlespacing*{\section}{0pt}{2pt}{1pt}
+
+% ─── LIST SETTINGS ───────────────────────────────────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=0pt,
+  topsep=1pt,
+  parsep=0pt,
+  partopsep=0pt,
+  label=\textbullet
+}
+
+% ─── CUSTOM COMMANDS ─────────────────────────────────────────────────────────
+\newcommand{\resumeheading}[4]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1}, \textit{#2} & \textbf{#3}\\[-2pt]
+    \textit{Role: #4} &
+  \end{tabularx}\vspace{2pt}%
+}
+
+\newcommand{\skillrow}[2]{%
+  \noindent\textbf{#1:} #2\par\vspace{1pt}%
+}
+
+% ─── DOCUMENT ────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  HEADER
+% ════════════════════════════════════════════════════════════════════════════
+\begin{center}
+  {\Huge\bfseries\color{HEADINGBLUE} BHANU PRAKASH BATHINI}\\[1pt]
+  {\normalsize Houston, TX \quad|\quad
+   \href{https://www.linkedin.com/}{LinkedIn} \quad|\quad
+   \href{https://github.com/}{GitHub Profile} \quad|\quad
+   \href{https://portfolio.dev/}{Portfolio}}
+\end{center}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  OBJECTIVE
+% ════════════════════════════════════════════════════════════════════════════
+\vspace{-8pt}
+\section*{Objective}
+\vspace{-6pt}
+
+\noindent\textbf{Senior Data Scientist} with expertise in AI/ML, LLMs, NLP, Computer Vision, and Generative AI. Proven track record in designing and deploying scalable, advanced AI models across healthcare, finance, and e-commerce using Python, PyTorch, and Hugging Face.
+
+% ════════════════════════════════════════════════════════════════════════════
+%  PROFILE SUMMARY
+% ════════════════════════════════════════════════════════════════════════════
+\vspace{-8pt}
+\section*{Profile Summary}
+\vspace{-6pt}
+\begin{itemize}
+  \item Designed and scaled multi-agent AI systems and generative AI applications, supporting globally distributed users across finance and retail domains.
+  \item Architected AI-native platforms on Snowflake Cortex AI and Snowpark, integrating advanced techniques like RAG, fine-tuning, and prompt engineering.
+  \item Built deep learning solutions and NLP pipelines using PyTorch, TensorFlow, Hugging Face, and LangChain for domain-specific use cases.
+  \item Orchestrated end-to-end MLOps workflows using Docker, Kubernetes, GitHub Actions, and Airflow for continuous model deployment.
+\end{itemize}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  TECHNICAL SKILLS
+% ════════════════════════════════════════════════════════════════════════════
+\vspace{-8pt}
+\section*{Technical Skills}
+\vspace{-6pt}
+
+\begin{itemize}
+  \item \textbf{Generative AI \& Deep Learning:} Transformers (GPT, BERT, LLaMA), Diffusion Models, RAG, Fine-tuning, PyTorch, TensorFlow, Keras, JAX
+  \item \textbf{NLP \& CV:} Hugging Face, LangChain, spaCy, NLTK, OpenCV, CLIP, Stable Diffusion
+  \item \textbf{Data \& Vector DBs:} Pandas, NumPy, PySpark, FAISS, Pinecone, Weaviate, Chroma DB
+  \item \textbf{Cloud \& MLOps:} AWS, GCP, Azure, Docker, Kubernetes, CI/CD, Airflow, MLflow
+  \item \textbf{Languages \& Others:} Python, SQL, JavaScript (Node.js), C++, TypeScript, Bash
+\end{itemize}
+
+% ════════════════════════════════════════════════════════════════════════════
+%  WORK EXPERIENCE
+% ════════════════════════════════════════════════════════════════════════════
+\vspace{-8pt}
+\section*{Work Experience}
+\vspace{-6pt}
+
+% ── Job 1 ──────────────────────────────────────────────────────────────────
+\noindent
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  \textbf{Mondee, Fairmont, CA, USA} & \textbf{01/2023 -- current}\\
+  \textit{Role: Data Scientist} &
+\end{tabularx}
+
+\textbf{Responsibilities:}
+\begin{itemize}
+  \item Developed GenAI-powered solutions using Snowflake Cortex AI, LangChain, and vector search to automate customer support processes.
+  \item Implemented sophisticated RAG pipelines within Snowflake to enable context-aware responses from enterprise data.
+  \item Fine-tuned and deployed transformer models (GPT, BERT) for product feedback summarization and intelligent automation workflows.
+  \item Orchestrated end-to-end MLOps workflows on Databricks, automating deployment via Docker, FastAPI, and serverless functions.
+\end{itemize}
+
+\textbf{Environment:} LLM APIs, OpenAI, RAG, LangChain, Snowflake, Databricks, FastAPI, Docker, Azure, AWS, Python, Vector databases.
+
+\vspace{0pt}
+
+% ── Job 2 ──────────────────────────────────────────────────────────────────
+\noindent
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  \textbf{Cosmic Reality, Hyderabad, India} & \textbf{04/2020 -- 10/2022}\\
+  \textit{Role: Data Scientist} &
+\end{tabularx}
+
+\textbf{Responsibilities:}
+\begin{itemize}
+  \item Built an NL-to-SQL ``Data Copilot'' converting natural-language into validated SQL for enterprise datasets hosted on Snowflake.
+  \item Created predictive models and applied Text Mining and NLP techniques to extract sentiments from technical documentation.
+  \item Deployed and managed containerized AI applications using Kubernetes, ensuring high performance across cloud-hosted workloads.
+  \item Streamlined model deployment and lifecycle automation using Databricks, Docker, FastAPI, and Streamlit.
+\end{itemize}
+
+\textbf{Environment:} Python, Hadoop, Spark, Snowflake, Databricks, AWS, GCP, Scikit-learn, MLflow, Kubernetes, Pandas, SQL.
+
+% ════════════════════════════════════════════════════════════════════════════
+%  EDUCATION
+% ════════════════════════════════════════════════════════════════════════════
+\vspace{-8pt}
+\section*{Education}
+\vspace{-6pt}
+\noindent Master's in Applied Computer Science, \textbf{Northwest Missouri State University},
+Maryville, Missouri, USA \hfill \textbf{06/2023 -- 12/2024}
+\end{document}

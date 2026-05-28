@@ -1,0 +1,74 @@
+%% Bhanu Prakash Bathini — Professional Resume
+%% Compiler: XeLaTeX or pdfLaTeX
+%% Required packages: geometry, titlesec, enumitem, hyperref, fontawesome5, multicol, xcolor, parskip
+
+\documentclass[11pt,letterpaper]{article}
+
+% ─── PACKAGES ────────────────────────────────────────────────────────────────
+\usepackage[
+  top=0.45in, bottom=0.45in,
+  left=0.55in, right=0.55in
+]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+% ─── COLORS ──────────────────────────────────────────────────────────────────
+\definecolor{HEADINGBLUE}{RGB}{0, 0, 0} 
+\definecolor{RULECOLOR}{RGB}{0, 0, 0} 
+\definecolor{DARKGRAY}{RGB}{0, 0, 0}
+\definecolor{LINKBLUE}{RGB}{0, 0, 0} 
+
+% ─── HYPERREF ────────────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+% ─── FONTS ───────────────────────────────────────────────────────────────────
+\renewcommand{\familydefault}{\sfdefault}
+
+% ─── NO PAGE NUMBER ──────────────────────────────────────────────────────────
+\pagestyle{empty}
+
+% ─── SECTION FORMATTING ──────────────────────────────────────────────────────
+\titleformat{\section}[block]
+  {\color{HEADINGBLUE}\large\bfseries} % formatting
+  {}{0pt}%
+  {\titleline{\hrulefill\ \MakeUppercase{#1}\ \hrulefill}}
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% ─── LIST SETTINGS ───────────────────────────────────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=1pt,
+  topsep=2pt,
+  parsep=0pt,
+  partopsep=0pt,
+  label=\textbullet
+}
+
+% ─── CUSTOM COMMANDS ─────────────────────────────────────────────────────────
+\newcommand{\resumeheading}[4]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1}, \textit{#2} & \textbf{#3}\\[-2pt]
+    \textit{Role: #4} &
+  \end{tabularx}\vspace{2pt}%
+}
+
+\newcommand{\skillrow}[2]{%
+  \noindent\textbf{#1:} #2\par\vspace{1pt}%
+}
