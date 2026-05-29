@@ -1,8 +1,9 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from settings import settings
 from graphs.resume_graph import resume_graph
+from nodes.one_page_resume import one_page_resume_node
 
 app = FastAPI(title="Agentic Resume Builder API")
 
@@ -17,6 +18,11 @@ app.add_middleware(
 
 class ResumeRequest(BaseModel):
     job_description: str
+
+class OnePageResumeRequest(BaseModel):
+    job_description: str
+    role: str
+    location: str
 
 @app.get("/")
 async def root():
@@ -51,6 +57,36 @@ async def generate_section(section_id: str, request: ResumeRequest):
             "status": "success",
             "message": f"Successfully updated {section_id} section.",
             "updated_content": result["resume_sections"].get(section_id, "")
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/generate-one-page")
+async def generate_one_page(
+    job_description: str = Form(...),
+    role: str = Form(...),
+    location: str = Form(...)
+):
+    """
+    Triggers the one-page resume node directly.
+    """
+    initial_state = {
+        "user_data": {
+            "job_description": job_description,
+            "role": role,
+            "location": location
+        },
+        "resume_sections": {},
+        "messages": []
+    }
+
+    try:
+        result = await one_page_resume_node(initial_state)
+        
+        return {
+            "status": "success",
+            "message": "Successfully updated one page resume.",
+            "updated_content": result["resume_sections"].get("one_page_resume", "")
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

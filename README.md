@@ -24,7 +24,6 @@ deploy/                # Deployment configurations
 - Python 3.13+
 - Node.js 20+
 - `uv` (Python package/environment manager)
-- npm
 
 ## Setup
 
@@ -40,17 +39,11 @@ Create `agents/.env` with the following variables:
 
 **Required - Azure OpenAI**
 
-| Variable | Description |
-| --- | --- |
-| `AZURE_OPENAI_API_KEY` | Azure OpenAI API key |
-| `AZURE_OPENAI_ENDPOINT` | Azure OpenAI endpoint |
-| `AZURE_OPENAI_DEPLOYMENT_NAME` | Azure OpenAI deployment name |
-| `AZURE_OPENAI_API_VERSION` | Azure OpenAI API version |
+```bash
+https://platform.openai.com/login
 
+| `AZURE_OPENAI_API_KEY` | Azure OpenAI API key |
+```
 ### 2) Frontend (ui)
 
-```bash
-cd ui
-npm install
-npm run dev
-```
+In Progress

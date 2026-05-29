@@ -4,6 +4,7 @@ from .profile_summary import profile_summary_node
 from .technical_skills import technical_skills_node
 from .work_experience_1 import work_experience_1_node
 from .work_experience_2 import work_experience_2_node
+from .one_page_resume import one_page_resume_node
 
 __all__ = [
     "objective_node",
@@ -12,4 +13,5 @@ __all__ = [
     "technical_skills_node",
     "work_experience_1_node",
     "work_experience_2_node",
+    "one_page_resume_node",
 ]
